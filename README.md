@@ -26,6 +26,14 @@ claude plugin install arabic-native-writing@saudi-writing-copilot
 
 للتحديث لاحقًا: `claude plugin update arabic-native-writing@saudi-writing-copilot`.
 
+**بلا تثبيت (أي محادثة فيها وصول للإنترنت):** الصق هذا السطر في أول المحادثة:
+
+```
+طبّق تعليمات الكتابة في هذا الرابط على كل ما أطلبه بالعربية في هذه المحادثة: https://raw.githubusercontent.com/abdulaziz-alhajjaj/saudi-writing-copilot/main/PORTABLE.md
+```
+
+هذه نسخة مختصرة (`PORTABLE.md`): القواعد وقائمة المنع بلا الفاحص الآلي ولا المراجع. وهي تعمل ما دام Claude قادرًا على فتح الرابط في تلك المحادثة.
+
 ## كيف تستعملها
 
 تعمل تلقائيًّا عند أي طلب كتابة أو تحرير بالعربية. أمثلة:
