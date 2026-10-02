@@ -13,12 +13,13 @@
 
 ## التثبيت
 
-**Claude (claude.ai):** نزّل المستودع كملف ZIP، ثم الإعدادات ← القدرات ← المهارات ← رفع مهارة. (تتطلب خطة تدعم المهارات وتفعيل تنفيذ الشيفرة؛ راجع مركز مساعدة Claude إن اختلفت القوائم.)
+**Claude (claude.ai):** نزّل الملف الجاهز `arabic-native-writing.zip` من جذر المستودع، ثم الإعدادات ← القدرات ← المهارات ← رفع مهارة. (تتطلب خطة تدعم المهارات وتفعيل تنفيذ الشيفرة؛ راجع مركز مساعدة Claude إن اختلفت القوائم.)
 
 **Claude Code:**
 
 ```bash
-git clone <رابط-المستودع> ~/.claude/skills/arabic-native-writing
+claude plugin marketplace add abdulaziz-alhajjaj/saudi-writing-copilot
+claude plugin install arabic-native-writing@saudi-writing-copilot
 ```
 
 ## الفاحص
@@ -51,14 +52,14 @@ python3 scripts/add_correction.py --export    # صفوف جاهزة لإرسال
       "matcher": "Write|Edit",
       "hooks": [{
         "type": "command",
-        "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.txt|*.md) python3 ~/.claude/skills/arabic-native-writing/scripts/calque_check.py \"$f\" --strict ;; esac"
+        "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.txt|*.md) python3 \"${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/skills/arabic-native-writing}/scripts/calque_check.py\" \"$f\" --strict ;; esac"
       }]
     }]
   }
 }
 ```
 
-رمز الخروج 2 يوصل رسالة الأخطاء إلى Claude. في تطبيق claude.ai لا تتوفر الخطّافات، وتبقى بوّابة الفحص في خطوات المهارة هي الضمان الوحيد.
+المسار في المثال هو مسار نسخة يدوية؛ إن ثبّتَّ المهارة إضافةً فاجعل المسار مسار مجلد `scripts/` في نسختك (ابحث عنه تحت `~/.claude/plugins/`). رمز الخروج 2 يوصل رسالة الأخطاء إلى Claude. في تطبيق claude.ai لا تتوفر الخطّافات، وتبقى بوّابة الفحص في خطوات المهارة هي الضمان الوحيد.
 
 ## حدود يجب أن تعرفها
 
@@ -73,4 +74,4 @@ python3 scripts/add_correction.py --export    # صفوف جاهزة لإرسال
 
 ## الترخيص
 
-MIT. انظر `LICENSE`.
+MIT. انظر `LICENSE` في جذر المستودع.

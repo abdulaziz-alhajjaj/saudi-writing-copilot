@@ -1,0 +1,10 @@
+{
+  "name": "arabic-native-writing",
+  "displayName": "الكتابة العربية الأصيلة",
+  "description": "مهارة تجعل النص العربي يُقرأ أصيلًا لا مترجمًا، موجهة للقارئ السعودي: قواعد وأساليب وفاحص كاليكات.",
+  "version": "0.1.0",
+  "author": { "name": "abdulaziz-alhajjaj" },
+  "homepage": "https://github.com/abdulaziz-alhajjaj/saudi-writing-copilot",
+  "repository": "https://github.com/abdulaziz-alhajjaj/saudi-writing-copilot",
+  "license": "MIT"
+}
