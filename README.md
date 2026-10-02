@@ -39,6 +39,8 @@ cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
 - فاحص آلي `scripts/calque_check.py` بنحو 56 نمطًا، وبوّابة فحص `--strict`.
 - تعلّم من التصحيح: `scripts/add_correction.py` (للتفاصيل والخطّاف في Claude Code انظر [README المهارة](arabic-native-writing/README.md)).
 
+- مرجع اختياري للتحقق اليدوي من الألفاظ الفصيحة: [سوار](https://siwar.ksaa.gov.sa) (مجمع الملك سلمان العالمي للغة العربية). المهارة لا تسحب منه ولا تنقل عنه، وتطلب من المستخدم أن يراجع فيه الكلمة المشكوك فيها.
+
 ## حدود يجب أن تعرفها
 
 - الفاحص يلتقط الأنماط المعروفة فقط، ونتيجة «لا ملاحظات» لا تعني أن النص عربي أصيل.
