@@ -13,12 +13,14 @@
 
 ## التثبيت
 
-**Claude (claude.ai):** نزّل المستودع كملف ZIP، ثم الإعدادات ← القدرات ← المهارات ← رفع مهارة. (تتطلب خطة تدعم المهارات وتفعيل تنفيذ الشيفرة؛ راجع مركز مساعدة Claude إن اختلفت القوائم.)
+**Claude (claude.ai):** نزّل الملف الجاهز `arabic-native-writing.zip` من جذر المستودع، ثم الإعدادات ← القدرات ← المهارات ← رفع مهارة. (تتطلب خطة تدعم المهارات وتفعيل تنفيذ الشيفرة؛ راجع مركز مساعدة Claude إن اختلفت القوائم.)
 
 **Claude Code:**
 
 ```bash
-git clone <رابط-المستودع> ~/.claude/skills/arabic-native-writing
+git clone https://github.com/abdulaziz-alhajjaj/saudi-writing-copilot
+mkdir -p ~/.claude/skills
+cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
 ```
 
 ## الفاحص
@@ -73,4 +75,4 @@ python3 scripts/add_correction.py --export    # صفوف جاهزة لإرسال
 
 ## الترخيص
 
-MIT. انظر `LICENSE`.
+MIT. انظر `LICENSE` في جذر المستودع.
