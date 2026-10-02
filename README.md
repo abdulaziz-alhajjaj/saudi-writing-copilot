@@ -2,7 +2,7 @@
 
 مهارة (Skill) لـ Claude تجعل النص العربي يُقرأ كأنه كُتب بالعربية من أول سطر، لا كأنه فُكّر بالإنجليزية ثم تُرجم. موجَّهة للقارئ السعودي: فصحى بيضاء رصينة، ومحكي أبيض مكتوب عند الطلب.
 
-اسم المهارة داخل Claude: `arabic-native-writing`، وملفاتها في مجلد `arabic-native-writing/`.
+اسم المهارة داخل Claude: `arabic-native-writing`، وملفاتها في `skills/arabic-native-writing/`.
 
 ## التثبيت
 
@@ -11,15 +11,20 @@
 2. من الإعدادات ← القدرات (Capabilities) ← المهارات (Skills) ← ارفع المهارة.
 3. فعّل المهارة. تتطلب ميزة المهارات خطة تدعمها وتفعيل تنفيذ الشيفرة؛ راجع مركز مساعدة Claude إن اختلفت أسماء القوائم.
 
-**في Claude Code:**
+**في Claude Code (أمران، أو أمر واحد داخل الجلسة):**
 
 ```bash
-git clone https://github.com/abdulaziz-alhajjaj/saudi-writing-copilot
-mkdir -p ~/.claude/skills
-cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
+claude plugin marketplace add abdulaziz-alhajjaj/saudi-writing-copilot
+claude plugin install arabic-native-writing@saudi-writing-copilot
 ```
 
-ثم أعد تشغيل Claude Code.
+أو من داخل جلسة Claude Code (الإصدار 2.1.275 فما فوق):
+
+```
+/plugin install arabic-native-writing --marketplace abdulaziz-alhajjaj/saudi-writing-copilot
+```
+
+للتحديث لاحقًا: `claude plugin update arabic-native-writing@saudi-writing-copilot`.
 
 ## كيف تستعملها
 
@@ -37,7 +42,7 @@ cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
 - خطوات عمل ثابتة، وقائمة منع بأشهر ما يتسرب من الإنجليزية.
 - مراجع: 19 سياق كتابة، و55 أسلوبًا بقوالبها، وبنك عناوين وافتتاحات، وجداول تعريب، وصور من بيئة القارئ، وحالات رجعية.
 - فاحص آلي `scripts/calque_check.py` بنحو 56 نمطًا، وبوّابة فحص `--strict`.
-- تعلّم من التصحيح: `scripts/add_correction.py` (للتفاصيل والخطّاف في Claude Code انظر [README المهارة](arabic-native-writing/README.md)).
+- تعلّم من التصحيح: `scripts/add_correction.py` (للتفاصيل والخطّاف في Claude Code انظر [README المهارة](skills/arabic-native-writing/README.md)).
 
 - مرجع اختياري للتحقق اليدوي من الألفاظ الفصيحة: [سوار](https://siwar.ksaa.gov.sa) (مجمع الملك سلمان العالمي للغة العربية). المهارة لا تسحب منه ولا تنقل عنه، وتطلب من المستخدم أن يراجع فيه الكلمة المشكوك فيها.
 
@@ -50,7 +55,7 @@ cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
 
 ## المساهمة
 
-أفضل مساهمة: عبارة مترجمة رأيتَها وطريقة أصلية لقولها. افتح Issue بالجملة قبل الإصلاح وبعده، أو أضف صفًّا إلى `arabic-native-writing/references/07-calques.csv`.
+أفضل مساهمة: عبارة مترجمة رأيتَها وطريقة أصلية لقولها. افتح Issue بالجملة قبل الإصلاح وبعده، أو أضف صفًّا إلى `skills/arabic-native-writing/references/07-calques.csv`.
 
 ## الترخيص
 

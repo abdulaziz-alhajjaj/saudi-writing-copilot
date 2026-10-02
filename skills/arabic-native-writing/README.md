@@ -18,9 +18,8 @@
 **Claude Code:**
 
 ```bash
-git clone https://github.com/abdulaziz-alhajjaj/saudi-writing-copilot
-mkdir -p ~/.claude/skills
-cp -r saudi-writing-copilot/arabic-native-writing ~/.claude/skills/
+claude plugin marketplace add abdulaziz-alhajjaj/saudi-writing-copilot
+claude plugin install arabic-native-writing@saudi-writing-copilot
 ```
 
 ## الفاحص
@@ -53,14 +52,14 @@ python3 scripts/add_correction.py --export    # صفوف جاهزة لإرسال
       "matcher": "Write|Edit",
       "hooks": [{
         "type": "command",
-        "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.txt|*.md) python3 ~/.claude/skills/arabic-native-writing/scripts/calque_check.py \"$f\" --strict ;; esac"
+        "command": "f=$(jq -r '.tool_input.file_path // empty'); case \"$f\" in *.txt|*.md) python3 \"${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/skills/arabic-native-writing}/scripts/calque_check.py\" \"$f\" --strict ;; esac"
       }]
     }]
   }
 }
 ```
 
-رمز الخروج 2 يوصل رسالة الأخطاء إلى Claude. في تطبيق claude.ai لا تتوفر الخطّافات، وتبقى بوّابة الفحص في خطوات المهارة هي الضمان الوحيد.
+المسار في المثال هو مسار نسخة يدوية؛ إن ثبّتَّ المهارة إضافةً فاجعل المسار مسار مجلد `scripts/` في نسختك (ابحث عنه تحت `~/.claude/plugins/`). رمز الخروج 2 يوصل رسالة الأخطاء إلى Claude. في تطبيق claude.ai لا تتوفر الخطّافات، وتبقى بوّابة الفحص في خطوات المهارة هي الضمان الوحيد.
 
 ## حدود يجب أن تعرفها
 

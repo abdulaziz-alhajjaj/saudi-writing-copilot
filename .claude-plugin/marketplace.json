@@ -1,0 +1,12 @@
+{
+  "name": "saudi-writing-copilot",
+  "description": "مهارات الكتابة العربية الأصيلة لـ Claude",
+  "owner": { "name": "abdulaziz-alhajjaj" },
+  "plugins": [
+    {
+      "name": "arabic-native-writing",
+      "source": "./",
+      "description": "مهارة تجعل النص العربي يُقرأ أصيلًا لا مترجمًا، موجهة للقارئ السعودي"
+    }
+  ]
+}
